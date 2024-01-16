@@ -1,0 +1,9 @@
+com\practice\hellospring\validation\ScoreValidator.class
+com\practice\hellospring\repository\GradeRepository.class
+com\practice\hellospring\HelloSpringApplication.class
+com\practice\hellospring\validation\Score.class
+com\practice\hellospring\controller\MovieController.class
+com\practice\hellospring\controller\GradeController.class
+com\practice\hellospring\pojo\Grade.class
+com\practice\hellospring\pojo\Show.class
+com\practice\hellospring\service\GradeService.class

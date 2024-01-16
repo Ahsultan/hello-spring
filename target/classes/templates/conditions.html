@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section>
+        <nav class="nav">
+            <a th:href="@{/grades}">Grades</a>
+            <a th:href="@{/conditions}" class="active">Condition</a>
+        </nav>
+    </section>
+
+
+
+
+
+
+
+
+
+    <h1 th:text="'Speed ' + ${speed}" ></h1>
+
+    <p th:text="${speed > 60 ? 'Slow Down' : 'Good Speed'}"></p>
+
+
+    <div th:if="${speed > 60}">
+        <img src="https://files.portive.com/f/learnthepart/77ugtcwwda6mk12vnukbo--392x462.png" width="200px">
+    </div>
+    <div th:unless="${speed > 60}">
+        <img src="https://files.portive.com/f/learnthepart/6e4k9nji8fmwv5n3n40wo--382x522.png" width="200px">
+    </div>
+
+
+    <div th:switch="${flower}">
+
+        <div th:case="'yellow'">
+            <h1>Yellow Flower</h1>
+            <img src="https://cdn.pixabay.com/photo/2023/03/18/06/53/rose-7860008_1280.jpg" width="300px">
+        </div>
+
+        <div th:case="'red'">
+            <h1>Red Flower</h1>
+            <img src="/rose-1039817_1280.jpg" width="300px">
+        </div>
+
+        <p th:case="*"> No flower matched </p>
+
+    </div>
+
+    <br>
+    <br>
+
+    <h1>Dealership</h1>
+
+    <div th:if="${budget >= 5000}">
+
+        <div th:switch="${make}">
+            <h3 th:case="'Toyota'">Toyota Corolla: $5,000</h3>
+            <h3 th:case="'Ford'">Ford Escape: $7,000</h3>
+            <h3 th:case="'Honda'">Honda Civic: $8,000</h3>
+            <h3 th:case="*">No cars match your query.</h3>
+        </div>
+
+    </div>
+
+    <h4 th:unless="${budget >= 5000}">
+        Sorry, we don't have any cars below $5,000
+    </h4>
+
+    <section>
+        <div>
+            <ol>
+                <li th:text="${#strings.substring(name, 0, 1)}"></li>
+                <li th:text="${#strings.substring(name, 0, 2)}"></li>
+                <li th:text="${#strings.substring(name, 0, 3)}"></li>
+                <li th:text="${#strings.substring(name, 0, 4)}"></li>
+                <li th:text="${#strings.substring(name, 0, 5)}"></li>
+            </ol>
+        </div>
+    </section>
+
+
+</body>
+</html>
